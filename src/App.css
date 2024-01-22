@@ -33,7 +33,7 @@ input.active{top: 0px;}
 .bi-search{font-size: 18px;position: absolute;right: 45%;background-color: white;color: rgba(58,43,74,.7);padding: 5px 10px;border-radius: 50%;transition: 600ms !important;cursor: pointer;}
 .bi-search.active{right: 0%;}
 .bi-search:hover{background-color:rgb(68, 54, 89);color: white;}
-.top-bar{position: relative;top: -12%;position: relative;width: 80%;
+.top-bar{position: relative;top: -5%;position: relative;width: 80%;
 display: flex;justify-content: center;}
 @media(min-width:972px){
   .bi-search{
