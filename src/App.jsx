@@ -14,7 +14,6 @@ function App() {
       )
       .then((response) => {
         setWeather(response.data);
-        console.log(response.data.weather?.[0].main); // Kontrol amaçlı
       })
       .catch((error) => {
         console.error("Error fetching weather data:", error);
@@ -47,7 +46,48 @@ function App() {
       </div>
 
       <h1>{selectedCity}</h1>
-      <img src={iconSrc} alt="Weather Icon" />
+      <img
+        src={
+          (iconSrc === "http://openweathermap.org/img/w/50d.png" &&
+            "https://www.clipartmax.com/png/full/59-593346_wind-clipart-weather-symbol-windy-weather-icon.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/01d.png" &&
+            "https://www.pinclipart.com/picdir/big/5-51451_rising-sun-clipart-portable-network-graphics-png-download.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/02d.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/03d.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/04d.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/09d.png" &&
+            "https://freepngimg.com/thumb/rain/72581-forecasting-rain-forecast-vector-weather-icon.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/10d.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/11d.png" &&
+            "https://cdn3.iconfinder.com/data/icons/weather-icons-8/512/weather-thunder-rainy-h-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/13d.png" &&
+            "https://cdn0.iconfinder.com/data/icons/cloudy-2/425/snow-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/50n.png" &&
+            "https://www.clipartmax.com/png/full/59-593346_wind-clipart-weather-symbol-windy-weather-icon.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/01n.png" &&
+            "https://www.pinclipart.com/picdir/big/5-51451_rising-sun-clipart-portable-network-graphics-png-download.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/02n.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/03n.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/04n.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/09n.png" &&
+            "https://freepngimg.com/thumb/rain/72581-forecasting-rain-forecast-vector-weather-icon.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/10n.png" &&
+            "https://cdn1.iconfinder.com/data/icons/weather-filled-outline-7/64/Sunny-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/11n.png" &&
+            "https://cdn3.iconfinder.com/data/icons/weather-icons-8/512/weather-thunder-rainy-h-1024.png") ||
+          (iconSrc === "http://openweathermap.org/img/w/13n.png" &&
+            "https://cdn0.iconfinder.com/data/icons/cloudy-2/425/snow-1024.png")
+        }
+        alt="Weather Icon"
+        style={{ height: "150px", marginTop: "40px" }}
+      />
 
       <h3>{weather.main?.temp.toFixed(0)}°</h3>
       <div className="part-area">
