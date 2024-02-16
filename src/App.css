@@ -28,18 +28,6 @@ h3{font-size: 40px;font-weight: normal;}
 }
 p{text-align: center;}
 img{height: 220px;}
-input{width: 90%;padding: 10px;border: 0px;outline: 0px;border-radius: .8em;background-color: rgba(58,43,74,.7);transition: 600ms;position: relative;top: -200px;} 
-input.active{top: 0px;}
-.bi-search{font-size: 18px;position: absolute;right: 45%;background-color: white;color: rgba(58,43,74,.7);padding: 5px 10px;border-radius: 50%;transition: 600ms !important;cursor: pointer;}
-.bi-search.active{right: 0%;}
-.bi-search:hover{background-color:rgb(68, 54, 89);color: white;}
-.top-bar{position: relative;top: -5%;position: relative;width: 80%;
-display: flex;justify-content: center;}
-@media(min-width:972px){
-  .bi-search{
-    right: 49%;
-  }
-  .bi-search.active{
-    right: 3%;
-  }
-}
+input{padding:5px;padding-right: 60px;background-color: white;color: black;border-radius: .5em;border-top-right-radius: 0px;border-bottom-right-radius: 0px;}
+.top-bar{position: relative;top: -5%;position: relative;width: 80%;display: flex;justify-content: center;align-items: center;}
+.bi-search{padding: 5px;background-color: white;color: black;font-size: 10px;cursor: pointer;}

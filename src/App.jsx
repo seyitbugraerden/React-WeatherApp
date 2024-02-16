@@ -5,7 +5,6 @@ import "./App.css";
 function App() {
   const [selectedCity, setSelectedCity] = useState("Ankara");
   const [weather, setWeather] = useState({});
-  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     axios
@@ -20,9 +19,6 @@ function App() {
       });
   }, [selectedCity]);
 
-  const handleSearchClick = () => {
-    setIsActive(!isActive);
-  };
   const iconSrc = weather.weather?.[0]?.icon
     ? `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
     : "";
@@ -37,12 +33,8 @@ function App() {
             setSelectedCity(e.target.value);
           }}
           placeholder="Şehir Giriniz"
-          className={isActive ? "active" : ""}
         />
-        <i
-          className={`bi bi-search ${isActive ? "active" : ""}`}
-          onClick={handleSearchClick}
-        ></i>
+        <i className={`bi bi-search`}></i>
       </div>
 
       <h1>{selectedCity}</h1>
