@@ -28,7 +28,9 @@ function App() {
           type="text"
           value={selectedCity}
           onChange={(e) => {
-            setSelectedCity(e.target.value);
+            if (!isValid) {
+              setSelectedCity(e.target.value);
+            }
           }}
           className={isValid ? "active" : ""}
         />
