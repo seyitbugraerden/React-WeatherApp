@@ -22,12 +22,8 @@ function App() {
   }, [selectedCity]);
 
   const handleSearchClick = () => {
-    // "active" sınıfını toggle et
     setIsActive(!isActive);
   };
-
-  // Eğer weather.weather[0] veya weather.weather[0].icon undefined ise,
-  // varsayılan bir değer ya da kontrol ekleyebilirsiniz.
   const iconSrc = weather.weather?.[0]?.icon
     ? `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
     : "";
