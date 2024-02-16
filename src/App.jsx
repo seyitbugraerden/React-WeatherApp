@@ -14,15 +14,9 @@ function App() {
       )
       .then((response) => {
         setWeather(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching weather data:", error);
       });
   }, [selectedCity]);
 
-  const handleSearch = () => {
-    console.log("2");
-  };
   const iconSrc = weather.weather?.[0]?.icon
     ? `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
     : "";
