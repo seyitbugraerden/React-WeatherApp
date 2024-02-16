@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [selectedCity, setSelectedCity] = useState("Ankara");
   const [weather, setWeather] = useState({});
+  const [isValid, setIsValid] = useState(true);
 
   useEffect(() => {
     axios
@@ -28,16 +29,21 @@ function App() {
 
   return (
     <>
-      <div className="top-bar">
+      <div className={`top-bar ${isValid ? "active" : ""}`}>
         <input
           type="text"
           value={selectedCity}
           onChange={(e) => {
             setSelectedCity(e.target.value);
           }}
-          className="active"
+          className={isValid ? "active" : ""}
         />
-        <i className="bi bi-search" onClick={handleSearch}></i>
+        <i
+          className="bi bi-search"
+          onClick={() => {
+            setIsValid(!isValid);
+          }}
+        ></i>
       </div>
       <h1>{selectedCity}</h1>
       <img
