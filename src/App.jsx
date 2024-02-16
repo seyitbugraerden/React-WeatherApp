@@ -19,6 +19,9 @@ function App() {
       });
   }, [selectedCity]);
 
+  const handleSearch = () => {
+    console.log("2");
+  };
   const iconSrc = weather.weather?.[0]?.icon
     ? `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
     : "";
@@ -32,11 +35,10 @@ function App() {
           onChange={(e) => {
             setSelectedCity(e.target.value);
           }}
-          placeholder="Şehir Giriniz"
+          className="active"
         />
-        <i className={`bi bi-search`}></i>
+        <i className="bi bi-search" onClick={handleSearch}></i>
       </div>
-
       <h1>{selectedCity}</h1>
       <img
         src={
