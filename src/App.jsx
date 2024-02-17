@@ -29,13 +29,14 @@ function App() {
           type="text"
           ref={roomInputRef}
           className={isValid ? "active" : ""}
+          placeholder="Pick Your City"
         />
         <i
           className="bi bi-search"
           onClick={() => {
             setIsValid(false);
-            {
-              !isValid && setSelectedCity(roomInputRef.current.value);
+            if (!isValid && roomInputRef.current.value !== "") {
+              setSelectedCity(roomInputRef.current.value);
             }
           }}
         ></i>
