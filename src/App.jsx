@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
   const [weather, setWeather] = useState({});
   const [isValid, setIsValid] = useState(true);
 
+  const roomInputRef = useRef(null);
   useEffect(() => {
     axios
       .get(
@@ -26,18 +27,16 @@ function App() {
       <div className={`top-bar ${isValid ? "active" : ""}`}>
         <input
           type="text"
-          value={selectedCity}
-          onChange={(e) => {
-            if (!isValid) {
-              setSelectedCity(e.target.value);
-            }
-          }}
+          ref={roomInputRef}
           className={isValid ? "active" : ""}
         />
         <i
           className="bi bi-search"
           onClick={() => {
-            setIsValid(!isValid);
+            setIsValid(false);
+            {
+              !isValid && setSelectedCity(roomInputRef.current.value);
+            }
           }}
         ></i>
       </div>
